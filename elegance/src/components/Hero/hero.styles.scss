@@ -1,0 +1,94 @@
+.container-hero{
+   height: 590px;
+   border-radius: 12px;
+   margin: 2rem 0;
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-position: center;
+   .wrapper-content-hero{
+      max-width: 720px;
+      width: 100%;
+      padding: 85px;
+      .content-text-hero{
+         padding: 2rem 3rem;
+         color: #FFF;
+         max-width: 660px;
+         width: 100%;
+         .title-hero{
+            font-size: 58px;
+            font-weight: bold;
+            margin: 0;
+            line-height: 130%;
+         }
+         .subtitle-hero{
+            margin: 1rem 0 0 0;
+            font-size: 24px;
+            font-weight: 500;
+         }
+      }
+
+      .container-cta-hero{
+         display: flex;
+         gap: 2rem;
+         margin-left: 3rem;
+         .cta-btn{
+            font-size: 24px;
+            font-weight: bold;
+            text-decoration: none;
+            padding: 1rem 3rem;
+            border-radius: 100px;
+         }
+         .btn-primary{
+            background-color: #F2A213;
+            color: #FFF;
+         }
+         .btn-secondary{
+            background-color: #FFF;
+            color: #F2A213;
+         }
+      }
+   }
+}
+
+@media(max-width: 767px){
+   body {
+      padding: 0 1rem;
+   }
+   .container-hero {
+      height: 590px;
+      .wrapper-content-hero {
+         padding: 0;
+         height: 100%;
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+         margin-top: -1rem;
+         .content-text-hero {
+            padding: 0;
+            width: 90%;
+            margin-left: 1rem;
+            .title-hero {
+               font-size: 2rem;
+            }
+            .subtitle-hero{
+               margin: 1rem 0 0 0;
+               font-size: 1rem;
+               font-weight: 500;
+            }
+         }
+         .container-cta-hero {
+            margin-top: 1rem;
+            margin-left: 1rem;
+            gap: .5rem;
+            width: 90%;
+            .cta-btn{
+               font-size: .75rem;
+               font-weight: bold;
+               text-decoration: none;
+               padding: .5rem 1rem;
+               border-radius: 100px;
+            }
+         }
+      }
+   }
+}

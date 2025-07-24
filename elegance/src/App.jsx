@@ -1,5 +1,6 @@
-import CardItem from './components/CardItem/CardItem';
 import CardList from './components/CardList/CardList';
+import Hero from './components/Hero/Hero';
+
 
 const App = () => {
 
@@ -19,15 +20,14 @@ const App = () => {
       name: 'Bed',
       image: './assets/categories/bed.jpg'
     },
-    {
-      id: 4,
-      name: 'Cupboard',
-      image: './assets/categories/cupboard.png'
-    }
+
   ]
 
   return (
-   <CardList categories={categories}/>
+    <>
+      <Hero />
+      <CardList categories={categories}/>
+    </>
   )
 }
 
