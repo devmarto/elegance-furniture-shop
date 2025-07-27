@@ -1,33 +1,21 @@
-import CardList from './components/CardList/CardList';
-import Hero from './components/Hero/Hero';
+import Home from "./routes/home/Home";
+import { Routes, Route } from "react-router";
+import Navbar from "./routes/navbar/Navbar";
 
+const Shop = () => {
+  return (
+    <h2>Shop page</h2>
+  )
+}
 
 const App = () => {
-
-  const categories = [
-    {
-      id: 1,
-      name: 'Chair',
-      image: './assets/categories/chair.jpg'
-    },
-    {
-      id: 2,
-      name: 'Sofa',
-      image: './assets/categories/sofa.png'
-    },
-    {
-      id: 3,
-      name: 'Bed',
-      image: './assets/categories/bed.jpg'
-    },
-
-  ]
-
   return (
-    <>
-      <Hero />
-      <CardList categories={categories}/>
-    </>
+    <Routes>
+      <Route  path='/' element={<Navbar />}>
+        <Route index element={<Home />} />
+        <Route path='/shop' element={<Shop />}/>
+      </Route>
+    </Routes>
   )
 }
 
