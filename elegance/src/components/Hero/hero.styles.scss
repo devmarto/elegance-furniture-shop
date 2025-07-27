@@ -51,11 +51,9 @@
 }
 
 @media(max-width: 767px){
-   body {
-      padding: 0 1rem;
-   }
    .container-hero {
       height: 590px;
+      margin: 0 1rem;
       .wrapper-content-hero {
          padding: 0;
          height: 100%;
