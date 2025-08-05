@@ -43,11 +43,8 @@ const Navbar = () => {
             </ul>
           </div>
           <div className="container-nav-action">
-            <Link to={'/register'}>
-              <p>Rgister</p>
-            </Link>
-            <Link to={'/login'}>
-              <p>Login</p>
+            <Link to={'/auth'}>
+              <p>Auth</p>
             </Link>
             <Link to={'/cart'}>
               <p>Cart</p>
@@ -89,11 +86,8 @@ const Navbar = () => {
                 </ul>
               </div>
               <div className="container-nav-action">
-                <Link to={'/register'}>
-                  <p>Sign Up</p>
-                </Link>
-                <Link to={'/login'}>
-                  <p>Login</p>
+                <Link to={'/auth'}>
+                  <p>Auth</p>
                 </Link>
                 <Link to={'/cart'}>
                   <p>Cart</p>

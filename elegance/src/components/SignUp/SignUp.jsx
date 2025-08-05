@@ -1,5 +1,8 @@
 import { useState } from "react";
-import { signInWithGooglePopup, createUserDocumentFromAuth, createAuthUserWithEmailAndPassword } from "../../utils/firebase/firebase.utils";
+import {
+  createUserDocumentFromAuth,
+  createAuthUserWithEmailAndPassword
+} from "../../utils/firebase/firebase.utils";
 import FormInput from "../../components/FormInput/FormInput";
 import Button from "../../components/Button/Button";
 
@@ -11,7 +14,7 @@ const defaultFormFields = {
   confirmPassword: ''
 }
 
-const Register = () => {
+const SignUp = () => {
 
   const [formFileds, setFormFields] = useState(defaultFormFields)
   const { displayName, email, password, confirmPassword } = formFileds;
@@ -43,11 +46,6 @@ const Register = () => {
     const { name, value } = event.target;
 
     setFormFields({ ...formFileds, [name]: value})
-  }
-
-  const loginGoogleUser = async () => {
-    const { user } = await signInWithGooglePopup();
-    const userDocRef = await createUserDocumentFromAuth(user);
   }
   return (
     <>
@@ -93,12 +91,10 @@ const Register = () => {
           <Button buttonType="invert" type="submit">
             Sign Up
           </Button>
-          {/* <button type="submit">Sign Up</button> */}
         </form>
       </div>
-      <Button buttonType="google" onClick={loginGoogleUser}>Sign in with Google Popup</Button>
     </>
   )
 }
 
-export default Register;
+export default SignUp;
