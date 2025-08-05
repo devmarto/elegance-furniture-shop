@@ -44,7 +44,7 @@ const Navbar = () => {
           </div>
           <div className="container-nav-action">
             <Link to={'/register'}>
-              <p>Sign Up</p>
+              <p>Rgister</p>
             </Link>
             <Link to={'/login'}>
               <p>Login</p>
