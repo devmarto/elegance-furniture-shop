@@ -15,62 +15,59 @@ const defaultFormFields = {
 const SignIn = () => {
 
   const [formFileds, setFormFields] = useState(defaultFormFields)
-    const { email, password } = formFileds;
+  const { email, password } = formFileds;
 
-    const resetFormField = () => {
-      setFormFields(defaultFormFields);
+  const resetFormFields = () => {
+    setFormFields(defaultFormFields);
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    try {
+      await signInAuthUserWithEmailAndPassword(email, password);
+      resetFormFields();
+    } catch (error) {
+      console.log('user sign in failed', error);
     }
+  };
 
-    const handleSubmit = async (event) => {
-      event.preventDefault();
+  const handleChange = (event) => {
+    const { name, value } = event.target;
 
-      try {
-        const response = await signInAuthUserWithEmailAndPassword(email, password);
-        console.log(response)
-        resetFormField;
+    setFormFields({ ...formFileds, [name]: value})
+  }
 
-      } catch(error) {
-        console.log(error);
-      }
-    }
-
-    const handleChange = (event) => {
-      const { name, value } = event.target;
-
-      setFormFields({ ...formFileds, [name]: value})
-    }
-
-    const signInWithGoogle = async () => {
-      const { user } = await signInWithGooglePopup();
-      await createUserDocumentFromAuth(user);
-    }
+  const signInWithGoogle = async () => {
+    const { user } = await signInWithGooglePopup();
+    await createUserDocumentFromAuth(user);
+  }
   return (
     <div>
       <form onSubmit={handleSubmit}>
-          <FormInput
-            label='Email'
-            type="email"
-            required
-            onChange={handleChange}
-            name="email"
-            value={email}
-          />
+        <FormInput
+          label='Email'
+          type="email"
+          required
+          onChange={handleChange}
+          name="email"
+          value={email}
+        />
 
-          <FormInput
-            label='Password'
-            type="password"
-            required
-            onChange={handleChange}
-            name="password"
-            value={password}
-          />
+        <FormInput
+          label='Password'
+          type="password"
+          required
+          onChange={handleChange}
+          name="password"
+          value={password}
+        />
 
-          <Button buttonType="invert" type="submit">
-            Sign In
-          </Button>
-        </form>
-              <Button buttonType="google" onClick={signInWithGoogle}>Sign in with Google Popup</Button>
-
+        <Button buttonType="invert" type="submit">
+          Sign In
+        </Button>
+      </form>
+      <Button buttonType="google" onClick={signInWithGoogle}>Sign in with Google Popup</Button>
     </div>
   )
 }
