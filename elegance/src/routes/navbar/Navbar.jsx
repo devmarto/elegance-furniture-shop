@@ -1,11 +1,20 @@
 import { Outlet, Link } from "react-router";
-import { Fragment, useState } from "react";
+import { Fragment, useState, useContext } from "react";
 import { IoCloseCircleOutline } from "react-icons/io5";
 import { RxHamburgerMenu } from "react-icons/rx";
+import { UserContext } from "../../contexts/user.context";
+import { signOutUser } from "../../utils/firebase/firebase.utils";
 
 const Navbar = () => {
   const [menuMobile, setMenuMobile] = useState(false);
   const logo = document.querySelector('.container-nav-mobile');
+
+  const { currentUser, setCurrentUser } = useContext(UserContext);
+
+  const signOutHandler = async () => {
+    await signOutUser();
+    setCurrentUser(null);
+  }
 
   const openMenuMobile = () => {
     setMenuMobile(true)
@@ -43,9 +52,14 @@ const Navbar = () => {
             </ul>
           </div>
           <div className="container-nav-action">
-            <Link to={'/auth'}>
-              <p>Auth</p>
-            </Link>
+            {currentUser ? (
+                <span className="container-nav-link" onClick={signOutHandler}>Sign Out</span>
+              ) : (
+                <Link to={'/auth'}>
+                  <p>Auth</p>
+                </Link>
+              )
+            }
             <Link to={'/cart'}>
               <p>Cart</p>
             </Link>
@@ -86,9 +100,14 @@ const Navbar = () => {
                 </ul>
               </div>
               <div className="container-nav-action">
-                <Link to={'/auth'}>
-                  <p>Auth</p>
-                </Link>
+                {currentUser ? (
+                    <span className="container-nav-link" onClick={signOutHandler}>Sign Out</span>
+                  ) : (
+                    <Link to={'/auth'}>
+                      <p>Auth</p>
+                    </Link>
+                  )
+                }
                 <Link to={'/cart'}>
                   <p>Cart</p>
                 </Link>
