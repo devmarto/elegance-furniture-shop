@@ -1,0 +1,12 @@
+.cart-dropdown-container {
+  position: absolute;
+  right: 0;
+  top: 150px;
+  height: 200px;
+  background-color: #FFF;
+  border: 1px solid;
+  padding: 1rem;
+  .cart-dropdown-items-container {
+    display: flex;
+  }
+}
