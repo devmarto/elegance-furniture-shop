@@ -5,11 +5,11 @@ import Button from '../Button/Button';
 
 import { CartContext } from '../../contexts/cart.context';
 
-const ProductCard = ( {products} ) => {
-  const {name, imageUrl, price} = products;
+const ProductCard = ( {product} ) => {
+  const {name, imageUrl, price} = product;
   const { addItemToCart } = useContext(CartContext);
 
-  const addProductToCart = () => addItemToCart(products);
+  const addProductToCart = () => addItemToCart(product);
   return (
     <div className='product-card-container'>
       <img className='product-card-image' src={imageUrl} alt={`${name}`}/>
