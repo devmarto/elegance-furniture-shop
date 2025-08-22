@@ -1,29 +1,28 @@
+### 🏷️ **PR Type**
 
-### 🏷️ **Tipo de PR**
+*What type of change does this PR introduce?*
 
-*Qual o tipo de alteração que este PR introduz?*
+- [ ] 🐛 Bugfix
+- [ ] ✨ New Feature
+- [ ] 🎨 Code Styling (formatting, etc.)
+- [ ] ♻️ Refactoring (no functional or API changes)
+- [ ] 🏗️ Build/CI Changes
+- [ ] 📚 Documentation Changes
+- [ ] 🧪 Adding or Updating Tests
+- [ ] 🧩 Other: (describe below)
 
-- [ ] 🐛 Correção de Bug (Bugfix)
-- [ ] ✨ Nova Funcionalidade (Feature)
-- [ ] 🎨 Estilização de Código (formatação, etc)
-- [ ] ♻️ Refatoração (nenhuma mudança funcional ou de API)
-- [ ] 🏗️ Alterações de Build/CI
-- [ ] 📚 Alterações na Documentação
-- [ ] 🧪 Adição ou atualização de Testes
-- [ ] 🧩 Outro: (descreva abaixo)
-
-
----
-
-### 🔗 **Link do Card (Jira, Trello, etc.)**
-
-[Clique aqui para ver a tarefa](https://LINK_PARA_SUA_TAREFA)
 
 ---
 
-### 📝 **O que foi feito?**
+### 🔗 **Card Link (Jira, Trello, etc.)**
 
-*Descreva de forma clara e concisa as alterações realizadas. O que mudou e por quê?*
+[Click here to see the task](https://LINK_FOR_YOUR_TASK)
+
+---
+
+### 📝 **What was done?**
+
+*Describe the changes made clearly and concisely. What changed and why?*
 
 -
 -
@@ -31,18 +30,18 @@
 
 ---
 
-### 🔬 **Como testar?**
+### 🔬 **How to test?**
 
-*Forneça um passo a passo para que o revisor possa testar suas alterações.*
+*Provide a step-by-step guide so the reviewer can test your changes.*
 
-1.  Acesse a página `X`.
-2.  Clique no botão `Y`.
-3.  O resultado esperado é `Z`.
+1. Go to page `X`.
+2. Click the `Y` button.
+3. The expected result is `Z`.
 
 ---
 
-### 📷 **Evidências (Screenshots, Vídeos)**
+### 📷 **Evidence (Screenshots, Videos)**
 
-*Se aplicável, adicione capturas de tela ou vídeos que ajudem a visualizar a mudança.*
+*If applicable, add screenshots or videos to help visualize the change.*
 
-*(Arraste e solte as imagens ou vídeos aqui)*
+*(Drag and drop images or videos here)*
