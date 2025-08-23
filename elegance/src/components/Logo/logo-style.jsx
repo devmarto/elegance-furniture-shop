@@ -20,4 +20,5 @@ export const LogoContainer = styled.div`
 export const LogoText = styled.span`
   font-size: 1.25rem;
   font-weight: bold;
+  padding: 0.25rem 0.75rem;
 `;

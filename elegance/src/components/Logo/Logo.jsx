@@ -1,5 +1,4 @@
-//import { Link } from "react-router";
-import logoIcon from '../../assets/logo.svg';
+import logoIcon from '../../assets/icon/logo.svg';
 import { LogoContainer, StyledLink, LogoText } from './logo-style';
 
 const Logo = () => {
