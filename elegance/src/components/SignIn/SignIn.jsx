@@ -67,7 +67,7 @@ const SignIn = () => {
           Sign In
         </Button>
       </form>
-      <Button buttonType="google" onClick={signInWithGoogle}>Sign in with Google Popup</Button>
+      <Button $googleSignIn onClick={signInWithGoogle}>Sign in with Google Popup</Button>
     </div>
   )
 }
