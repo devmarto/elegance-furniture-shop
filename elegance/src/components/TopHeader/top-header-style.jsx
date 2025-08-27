@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const TopHeaderContainer = styled.div`
+  font-family: "Montserrat", sans-serif;
   background-color: #947458;
   color: #FFF;
   text-align: center;

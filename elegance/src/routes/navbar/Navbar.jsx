@@ -5,6 +5,20 @@ import { CartContext } from "../../contexts/cart.context";
 import { signOutUser } from "../../utils/firebase/firebase.utils";
 import CardIcon from "../../components/CartIcon/CardIcon";
 import CartDropdown from "../../components/CartDropdown/CartDropdown";
+import userIcon from '../../assets/icon/user.svg';
+import wishlist from '../../assets/icon/heart.svg';
+import logOut from '../../assets/icon/logout.svg';
+
+import {
+  NavContainer,
+  NavLinks,
+  NavLinkContainer,
+  NavLinkItemContainer,
+  NavLinkItem,
+  ContainerNavAction,
+  LinkLogOut
+} from './navbar-style';
+import Logo from "../../components/Logo/Logo";
 
 
 const Navbar = () => {
@@ -17,43 +31,42 @@ const Navbar = () => {
   }
   return (
     <Fragment>
-      <nav className="container-nav">
-        <div className="logo">
-          <Link to={'/'}>
-            <span className="logo">Elegance</span>
+      <NavContainer>
+        <Logo />
+        <NavLinkContainer>
+          <NavLinks>
+            <NavLinkItemContainer>
+              <NavLinkItem to={'/'}>Home</NavLinkItem>
+            </NavLinkItemContainer>
+            <NavLinkItemContainer>
+              <NavLinkItem to={'/shop'}>Shop</NavLinkItem>
+            </NavLinkItemContainer>
+            <NavLinkItemContainer>
+              <NavLinkItem to={'/features'}>Features</NavLinkItem>
+            </NavLinkItemContainer>
+            <NavLinkItemContainer>
+              <NavLinkItem to={'/contact'}>Contact Us</NavLinkItem>
+            </NavLinkItemContainer>
+          </NavLinks>
+        </NavLinkContainer>
+        <ContainerNavAction>
+          {currentUser ? (
+              <LinkLogOut onClick={signOutHandler}>
+                <img src={logOut} alt="Log Out Icon" className="logout-icon" />
+              </LinkLogOut>
+            ) : (
+              <Link to={'/auth'}>
+                <img src={userIcon} alt="User Icon" className="user-icon" />
+              </Link>
+            )
+          }
+          <Link to={'/wishlist'}>
+            <img src={wishlist} alt="Wishlist Icon" className="wishlist-icon" />
           </Link>
-        </div>
-        <div className="wrapper-nav">
-          <div className="container-nav-link">
-            <ul className="nav-links">
-              <li className="nav-link-item">
-                <Link to={'/'}>Home</Link>
-              </li>
-              <li className="nav-link-item">
-                <Link to={'/shop'}>Shop</Link>
-              </li>
-              <li className="nav-link-item">
-                <Link to={'/features'}>Features</Link>
-              </li>
-              <li className="nav-link-item">
-                <Link to={'/contact'}>Contact Us</Link>
-              </li>
-            </ul>
-          </div>
-          <div className="container-nav-action">
-            {currentUser ? (
-                <span className="container-nav-link" onClick={signOutHandler}>Sign Out</span>
-              ) : (
-                <Link to={'/auth'}>
-                  <p>Auth</p>
-                </Link>
-              )
-            }
-            <CardIcon />
-          </div>
-        </div>
+          <CardIcon />
+        </ContainerNavAction>
         {isCartOpen && <CartDropdown />}
-      </nav>
+      </NavContainer>
       <Outlet />
     </Fragment>
   )
