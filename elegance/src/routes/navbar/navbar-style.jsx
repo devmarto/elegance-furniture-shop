@@ -7,7 +7,7 @@ export const NavContainer = styled.nav`
   align-items: center;
   max-width: 1296px;
   width: 100%;
-  margin: 2rem auto;
+  margin: 1rem auto;
 `;
 
 export const NavLinkContainer = styled.div`

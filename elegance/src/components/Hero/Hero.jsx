@@ -1,20 +1,18 @@
-import HeroImg from '../../../public/assets/hero-main.jpg';
-import './hero.styles.scss';
+import { Link } from 'react-router';
+import { HeroContainer, HeroTitle, HeroSubtitle, HeroContent } from './hero-style';
+import Button from '../Button/Button';
 
 const Hero = () => {
   return (
-    <section className='container-hero' style={{backgroundImage: `url(${HeroImg})`}}>
-      <div className='wrapper-content-hero'>
-        <div className='content-text-hero'>
-          <h1 className='title-hero'>Furniture that blends with your lifestyle</h1>
-          <p className='subtitle-hero'>Lorem ipsum dolor sit amet, consectetur adiping elit, sed do eiusmod tempor incidint ut labore et dolore amnesian</p>
-        </div>
-        <div className='container-cta-hero'>
-          <a className='cta-btn btn-primary' href='#'>Shop Now</a>
-          <a className='cta-btn btn-secondary' href='#'>Learn More</a>
-        </div>
-      </div>
-    </section>
+    <HeroContainer>
+      <HeroContent>
+        <HeroTitle>Evaluate your interior <br />With Expert design services</HeroTitle>
+        <HeroSubtitle>Transform you furniture by using the Elegance for effortless and beautiful home decoration.</HeroSubtitle>
+        <Link to="/shop">
+          <Button>Shop Now</Button>
+        </Link>
+      </HeroContent>
+    </HeroContainer>
   )
 }
 
