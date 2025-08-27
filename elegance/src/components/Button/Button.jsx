@@ -1,15 +1,10 @@
-import './button.styles.scss';
+import { ButtonStyle } from './button.style.ts';
 
-const BUTTON_TYPE_CLASS = {
-  google: 'google-sing-in',
-  invert: 'inverted'
-}
-
-const Button = ({children, buttonType, ...otherProps}) => {
+const Button = ({ children, ...otherProps }) => {
   return (
-    <button className={`button-default ${BUTTON_TYPE_CLASS[buttonType]}`} {...otherProps}>
+    <ButtonStyle {...otherProps}>
       {children}
-    </button>
+    </ButtonStyle>
   )
 }
 
