@@ -25,6 +25,11 @@ export const NavLinkItemContainer = styled.li`
   padding: 0.25rem 0.75rem;
 `;
 
+export const LinkLogOut = styled.li`
+  cursor: pointer;
+  list-style: none;
+`;
+
 export const NavLinkItem = styled(Link)`
   color: #000000;
   text-decoration: none;

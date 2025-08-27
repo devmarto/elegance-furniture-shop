@@ -7,6 +7,7 @@ import CardIcon from "../../components/CartIcon/CardIcon";
 import CartDropdown from "../../components/CartDropdown/CartDropdown";
 import userIcon from '../../assets/icon/user.svg';
 import wishlist from '../../assets/icon/heart.svg';
+import logOut from '../../assets/icon/logout.svg';
 
 import {
   NavContainer,
@@ -14,7 +15,8 @@ import {
   NavLinkContainer,
   NavLinkItemContainer,
   NavLinkItem,
-  ContainerNavAction
+  ContainerNavAction,
+  LinkLogOut
 } from './navbar-style';
 import Logo from "../../components/Logo/Logo";
 
@@ -49,7 +51,9 @@ const Navbar = () => {
         </NavLinkContainer>
         <ContainerNavAction>
           {currentUser ? (
-              <span className="container-nav-link" onClick={signOutHandler}>Sign Out</span>
+              <LinkLogOut onClick={signOutHandler}>
+                <img src={logOut} alt="Log Out Icon" className="logout-icon" />
+              </LinkLogOut>
             ) : (
               <Link to={'/auth'}>
                 <img src={userIcon} alt="User Icon" className="user-icon" />

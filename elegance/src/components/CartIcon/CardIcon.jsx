@@ -1,5 +1,4 @@
 import { useContext } from 'react';
-// import { MdOutlineShoppingCart } from "react-icons/md";
 import { CartIconContainer } from './cart-icon-styles'
 import { CartContext } from '../../contexts/cart.context';
 import shoppingBag from '../../assets/icon/shopping.svg';
