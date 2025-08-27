@@ -1,14 +1,19 @@
-import './card-item.styles.scss';
+import {
+  CardListItemContainer,
+  CardImage,
+  CardTitle,
+  CardLink
+} from './card-item-style.jsx';
+
 const CardItem = ({ category }) => {
-  const { image, name } = category;
+  const { image, name, url } = category;
   return (
-    <div className="container-category" style={{
-      backgroundImage: `url(${image})`
-    }}>
-      <div className="box-name-category">
-        <h3 className="name-category">{name}</h3>
-      </div>
-    </div>
+    <CardListItemContainer>
+      <CardLink to={url}>
+        <CardImage src={image} alt={name} />
+        <CardTitle>{name}</CardTitle>
+      </CardLink>
+    </CardListItemContainer>
   )
 }
 

@@ -1,13 +1,13 @@
 import CardItem from "../CardItem/CardItem";
-import './card-list.styles.scss'
+import { CardListContainer } from './card-list.style.jsx'
 
 const CardList = ({categories}) => {
   return (
-     <div className="container-card-list">
+     <CardListContainer>
       {categories.map((category) => (
-        <CardItem key={category.id} category={category} />
+        <CardItem key={category.id} category={category} url={category.url}/>
       ))}
-    </div>
+    </CardListContainer>
   )
 }
 
