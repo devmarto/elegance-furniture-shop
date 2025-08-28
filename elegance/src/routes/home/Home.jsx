@@ -1,29 +1,14 @@
 import Hero from "../../components/Hero/Hero";
-import CardList from "../../components/CardList/CardList";
+// import CardList from "../../components/CardList/CardList";
+import CategorySection from "../../components/CategorySection/CategorySection";
 
 const Home = () => {
-  const categories = [
-    {
-      id: 1,
-      name: 'Chair',
-      image: './assets/categories/chair.jpg'
-    },
-    {
-      id: 2,
-      name: 'Sofa',
-      image: './assets/categories/sofa.png'
-    },
-    {
-      id: 3,
-      name: 'Bed',
-      image: './assets/categories/bed.jpg'
-    },
 
-  ]
   return (
     <>
       <Hero />
-      <CardList categories={categories}/>
+      <CategorySection />
+      {/* <CardList categories={categories}/> */}
     </>
   )
 }
