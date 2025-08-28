@@ -10,7 +10,7 @@ export const CategorySectionHeader = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 2.5rem;
+  /* margin-bottom: 2.5rem; */
 `;
 
 export const CategorySectionTitle = styled.h2`
